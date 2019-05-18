@@ -1,0 +1,42 @@
+<form action="" method="POST" id="add_leave_type_frm" enctype="multipart/form-data">
+    <div class="form-group">
+        <input id="leave_type_name" name="leave_type_name" type="text" required="required" class="form-control" placeholder="Leave type Name....">
+    </div>
+    <div class="form-group">
+        <input id="duration" name="duration" type="text" required="required" class="form-control" placeholder="Duration Name....">
+    </div>
+    <div class="form-group">
+        <input type="submit" class="form-control btn btn-success" value="Add leave type">
+    </div>
+    <div id="add_msg" class="text-center"></div>
+</form>
+
+
+<script>
+    $(document).ready(function () {
+        $('#add_leave_type_frm').submit(function () {
+            var dataString = $('#add_leave_type_frm').serialize();
+            $.ajax({
+                type: "POST",
+                url: '<?php echo base_url() ?>master/leave_type/create_leave_type',
+                data: dataString,
+                success: function (result) {
+                    if (result) {
+                        $('#add_msg').html(result);
+                        $('#add_msg .alert').delay(5000).fadeOut(1000);
+                        $('#add_leave_type_frm').trigger("reset");
+                        window.setTimeout(function () {
+                            window.location.href = "<?php echo base_url()?>master/leave_type/all_leave_type";
+                        }, 1000);
+                        return false;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+

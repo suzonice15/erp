@@ -1,0 +1,28 @@
+<!-- default css -->
+ 
+ 
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.dropdown i{
+	color: #fff;
+}
+.navbar-top-links li a {
+    background:#3C8DBC !important;
+}
+.nav > li > a{
+    background: #222D32;
+    color: #8aa4af;
+}
+.nav > li > a:focus, .nav > li > a:hover {
+    background: #222D32;
+    color: #fff;
+}
+.sidebar ul li a.active {
+    background: #222D32;
+    color: #fff;
+    border: none;
+}
+
+
+<!-- default css -->
